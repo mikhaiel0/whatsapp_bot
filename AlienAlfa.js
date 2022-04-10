@@ -1423,7 +1423,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
         case 'othermenu':
             scpic = fs[_0x150737(0x699)](_0x150737(0x319)), timestampe = speed(), latensie = speed() - timestampe, menu = _0x150737(0x5d8) + latensie[_0x150737(0x3dd)](0x4) + _0x150737(0x17d) + gaya2 + ' ' + _0xedc398 + _0x150737(0x286) + gaya2 + ' ' + _0xedc398 + 'speed\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x278) + gaya2 + ' ' + _0xedc398 + 'payment\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x372) + gaya2 + ' ' + _0xedc398 + 'developer\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x618) + gaya2 + ' ' + _0xedc398 + _0x150737(0x427), _0x158a6d[_0x150737(0x2f1)](_0x14eb93, {
                 'contentText': '' + menu,
-                'footerText' : 'ᴊɪᴍʙʀᴜ ᴠ3',
+                'footerText': 'ᴊɪᴍʙʀᴜ ᴠ3',
                 'buttons': [{
                     'buttonId': _0xedc398 + _0x150737(0x346),
                     'buttonText': {
