@@ -1,7 +1,7 @@
 {
-  "name": "AlfaBot",
+  "name": "Jimbru V-3",
   "version": "4.0.0",
-  "description": "None",
+  "description": "⚡",
   "main": "main.js",
   "directories": {
     "lib": "lib"
@@ -45,7 +45,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alien-Alfa"
+    "url": "git+https://github.com/Mikhaiel"
   },
   "keywords": [
     "Wasu"
@@ -53,7 +53,7 @@
   "author": "Alien-Alfa",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Alien-Alfa/AlienAlfaBot/issue"
+    "url": "https://github.com/Mikhaiel/whatsapp_bot/issue"
   },
-  "homepage": "https://github.com/Alien-Alfa/AlienAlfa"
+  "homepage": "https://github.com/whatsapp_bot"
 }
