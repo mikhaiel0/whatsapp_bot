@@ -12,22 +12,22 @@
         "OWNER_NUMBER": {
             "description": "Pleas enter Number Of the Owner.",
             "required": true,
-            "value": "447405935255"
+            "value": "919544846609"
         }, 
 	"WELCOME": {
-            "description": "Costom Welcome message.",
+            "description": "Custom Welcome message.",
             "required": true,
-            "value": "Hey Buddy"
+            "value": "Hey 👋"
         }, 
 	"GOODBYE": {
             "description": "Goodbye Message.",
             "required": true,
-            "value": "Anyways See you Later"
+            "value": "Anyway See you Later"
         }, 
         "OWNER_NAME": {
             "description": "Pleas enter your Name.",
             "required": true,
-        "value": "Alien Alfa"
+        "value": "Mikhaiel"
         }, 
         "WORK_TYPE": {
             "description": "Public or Private(true = Private, False = Public).",
@@ -57,17 +57,17 @@
         "BOT_NAME": {
             "description": "Pleas enter your BOT Name.",
             "required": true,
-                "value": "Toxic Bot"
+                "value": "Jimbru v3"
         }, 
         "MENU_LOGO": {
             "description": "Icon or emoji to show in menu list.",
             "required": true,
-                "value": "𒆜"
+                "value": "🦋"
         }, 
 	"MENU_LOGO2": {
             "description": "Icon or emoji to show in menu list.",
             "required": true,
-                "value": "𒆜"
+                "value": "⚡"
         }, 
         "AUTO_TYPE": {
             "description": "Automatic typing status.(true or false).",
