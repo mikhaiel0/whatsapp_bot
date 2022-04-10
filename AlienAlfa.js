@@ -1311,7 +1311,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
         case _0x150737(0x971):
             scpic = fs[_0x150737(0x699)](_0x150737(0x319)), timestampe = speed(), latensie = speed() - timestampe, menu = _0x150737(0x5d8) + latensie[_0x150737(0x3dd)](0x4) + _0x150737(0x53e) + gaya2 + ' ' + _0xedc398 + _0x150737(0x2c9) + gaya2 + ' ' + _0xedc398 + _0x150737(0x69d) + gaya2 + ' ' + _0xedc398 + _0x150737(0x5bd) + gaya2 + ' ' + _0xedc398 + _0x150737(0x35e) + gaya2 + ' ' + _0xedc398 + _0x150737(0x3c6) + gaya2 + ' ' + _0xedc398 + _0x150737(0x4d7) + gaya2 + ' ' + _0xedc398 + _0x150737(0x2d8) + gaya2 + ' ' + _0xedc398 + 'nightcore _reply audio/vn_\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x4c6) + gaya2 + ' ' + _0xedc398 + _0x150737(0x320) + gaya2 + ' ' + _0xedc398 + _0x150737(0x6d3) + gaya2 + ' ' + _0xedc398 + _0x150737(0x4d8) + gaya2 + ' ' + _0xedc398 + _0x150737(0x39c) + gaya2 + ' ' + _0xedc398 + 'vidsec _reply video with number_\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x4d6) + gaya2 + ' ' + _0xedc398 + _0x150737(0x40e) + gaya2 + ' ' + _0xedc398 + 'tourl _reply image/vid_\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x39a), _0x158a6d[_0x150737(0x2f1)](_0x14eb93, {
                 'contentText': '' + menu,
-                'footerText': '*_ＡＬＩＥＮ ＡＬＦＡ_*',
+                'footerText': 'Jɪᴍʙʀᴜ ᴠ3',
                 'buttons': [{
                     'buttonId': _0xedc398 + 'alfa',
                     'buttonText': {
@@ -1339,7 +1339,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
         case _0x150737(0x96a):
             scpic = fs['readFileSync'](_0x150737(0x319)), timestampe = speed(), latensie = speed() - timestampe, menu = _0x150737(0x5d8) + latensie['toFixed'](0x4) + _0x150737(0x7d5) + gaya2 + ' ' + _0xedc398 + _0x150737(0x532) + gaya2 + ' ' + _0xedc398 + _0x150737(0x630), _0x158a6d[_0x150737(0x2f1)](_0x14eb93, {
                 'contentText': '' + menu,
-                'footerText': '*_ＡＬＩＥＮ ＡＬＦＡ_*',
+                'footerText': 'ᴊɪᴍʙʀᴜ ᴠ3',
                 'buttons': [{
                     'buttonId': _0xedc398 + _0x150737(0x346),
                     'buttonText': {
@@ -1423,7 +1423,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
         case 'othermenu':
             scpic = fs[_0x150737(0x699)](_0x150737(0x319)), timestampe = speed(), latensie = speed() - timestampe, menu = _0x150737(0x5d8) + latensie[_0x150737(0x3dd)](0x4) + _0x150737(0x17d) + gaya2 + ' ' + _0xedc398 + _0x150737(0x286) + gaya2 + ' ' + _0xedc398 + 'speed\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x278) + gaya2 + ' ' + _0xedc398 + 'payment\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x372) + gaya2 + ' ' + _0xedc398 + 'developer\x0a' + gaya2 + ' ' + _0xedc398 + _0x150737(0x618) + gaya2 + ' ' + _0xedc398 + _0x150737(0x427), _0x158a6d[_0x150737(0x2f1)](_0x14eb93, {
                 'contentText': '' + menu,
-                'footerText': '*_ＡＬＩＥＮ ＡＬＦＡ_*',
+                'footerText' : 'ᴊɪᴍʙʀᴜ ᴠ3',
                 'buttons': [{
                     'buttonId': _0xedc398 + _0x150737(0x346),
                     'buttonText': {
@@ -4156,7 +4156,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
             }];
             const _0x1445c6 = {
                 'contentText': 'ON/OFF\x0a\x0aAUTOVN',
-                'footerText': 'Please choose one\x0aＡＬＩＥＮ ＡＬＦＡ',
+                'footerText': 'Please choose one\',
                 'buttons': buttonss,
                 'headerType': 0x1
             };
