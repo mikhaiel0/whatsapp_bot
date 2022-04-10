@@ -4156,7 +4156,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
             }];
             const _0x1445c6 = {
                 'contentText': 'ON/OFF\x0a\x0aAUTOVN',
-                'footerText': 'Please choose one\',
+                'footerText': 'Please choose one\x0aＡＬＩＥＮ ＡＬＦＡ',
                 'buttons': buttonss,
                 'headerType': 0x1
             };
@@ -4446,7 +4446,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
             }];
             const _0x3e16d5 = {
                 'contentText': _0x150737(0x262),
-                'footerText': 'Update\x0aＡＬＩＥＮ ＡＬＦＡ',
+                'footerText': 'Update\x0aᴊɪᴍʙʀᴜ',
                 'buttons': buttonss,
                 'headerType': 0x1
             };
@@ -4682,7 +4682,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
                     'forwardingScore': 0x1fc,
                     'isForwarded': !![],
                     'externalAdReply': {
-                        'title': '𝘼𝙇𝙄𝙀𝙉 𝘼𝙇𝙁𝘼',
+                        'title': '𝑀𝑖𝑘ℎ𝑎𝑖𝑒𝑙',
                         'body': 'Subscribe to my YouTube channel',
                         'previewType': _0x150737(0x15f),
                         'thumbnail': fs[_0x150737(0x699)](_0x150737(0x319)),
@@ -4695,7 +4695,7 @@ module[_0x586525(0x952)] = Alienalfa = async (_0x158a6d, _0x1019c1, _0x401dca) =
                     'forwardingScore': 0x1fc,
                     'isForwarded': !![],
                     'externalAdReply': {
-                        'title': '𝘼𝙇𝙄𝙀𝙉 𝘼𝙇𝙁𝘼',
+                        'title': '𝑀𝑖𝑘ℎ𝑎𝑖𝑒𝑙',
                         'body': 'Subscribe to my YouTube channel',
                         'previewType': _0x150737(0x15f),
                         'thumbnail': fs[_0x150737(0x699)](_0x150737(0x319)),
