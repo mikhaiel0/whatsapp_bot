@@ -31,7 +31,7 @@
  
 <a href="https://replit.com/@Alien-Alfa/ALIEN-ALFA-BOT"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://repl.it/badge/github/quiec/whatsasena" width="300"></a>
 
-<a href="https://heroku.com/deploy?template=https://github.com/Alien-alfa/WhatsAppBot"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="400"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/mikhaiel0/whatsapp_bot"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="400"></a>
 
   # `FORK THIS BEFORE PROCEEDING`
  
