@@ -62,7 +62,7 @@ console.log(color('  Jimbru Inc. 2022','mediumseagreen'))
         fs.writeFileSync(`./${session}.json`, JSON.stringify(Alienalfa.base64EncodedAuthInfo(), null, '\t'))
 
     Alienalfa.on('chat-update', async (message) => {
-        require('./DogeBot.js')(Alienalfa, message, _welkom)
+        require('./AlienAlfa.js')(Alienalfa, message, _welkom)
     })
 Alienalfa.on("group-participants-update", async (anu) => {
 
