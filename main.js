@@ -2,7 +2,7 @@
 //═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════//
 //                                                                                                                                                     //
 //                                                                 ＡＬＩＥＮ ＡＬＦＡ                                                                    //
-//                                                                                                                                                     //
+//                               {"clientID":"d6L8Rc4C7KHierlUfmjZ/Q==","serverToken":"1@T1A2cypigl7i63hNFCiX6yJFeSndo7jwyvoBoFbFk/jYFDKjz6yAnQAT14DeJ28pWuJQR143lQG2gw==","clientToken":"xTqvuqUe/juKwq5QqsKe/bvR11ENNHI+m7nYsETEwTk=","encKey":"/QE5+IRRRq8425A5S16wxg+rRdCDBb5rRDaaWKUWnIU=","macKey":"OKqAAyM7j+tlTabBturg17nfVXiZKaMIHIf5pksTRFw="}                                                                                                                      //
 //                                                                    Ｖ：１．０．１                                                                     //
 //                                                                                                                                                     //
 //                                     ░█████╗░██╗░░░░░██╗███████╗███╗░░██╗  ░█████╗░██╗░░░░░███████╗░█████╗░                                          //
