@@ -1,157 +1,24 @@
-const {
-    WAConnection,
-    MessageType,
-    Presence,
-    Mimetype,
-    GroupSettingChange
-} = require('@adiwajshing/baileys')
-const fs = require('fs')
-const figlet = require('figlet')
-const moment = require('moment-timezone')
-const { wait, banner, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, start, info, success, close } = require('./lib/functions.js')
-const { color } = require('./lib/color.js')
-const _welkom = JSON.parse(fs.readFileSync('./database/welcome.json'))
-const setting = JSON.parse(fs.readFileSync('./setting/setting.json'))
 
-session = setting.session
+//═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════//
+//                                                                                                                                                     //
+//                                                                 ＡＬＩＥＮ ＡＬＦＡ                                                                    //
+//                                                                                                                                                     //
+//                                                                    Ｖ：１．０．１                                                                     //
+//                                                                                                                                                     //
+//                                     ░█████╗░██╗░░░░░██╗███████╗███╗░░██╗  ░█████╗░██╗░░░░░███████╗░█████╗░                                          //
+//                                     ██╔══██╗██║░░░░░██║██╔════╝████╗░██║  ██╔══██╗██║░░░░░██╔════╝██╔══██╗                                          //
+//                                     ███████║██║░░░░░██║█████╗░░██╔██╗██║  ███████║██║░░░░░█████╗░░███████║                                          //
+//                                     ██╔══██║██║░░░░░██║██╔══╝░░██║╚████║  ██╔══██║██║░░░░░██╔══╝░░██╔══██║                                          //
+//                                     ██║░░██║███████╗██║███████╗██║░╚███║  ██║░░██║███████╗██║░░░░░██║░░██║                                          //
+//                                     ╚═╝░░╚═╝╚══════╝╚═╝╚══════╝╚═╝░░╚══╝  ╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝░░╚═╝                                          //
+//                                                                                                                                                     //
+//                                                                                                                                                     //
+//═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════//
 
+//Obfuscated By AlienAlfa
+// Unecrypted file Willbe relesed Soon
+//Full file will be relised After all BUGS Has been Fixed
 
-require('./AlienAlfa.js')
-nocache('./AlienAlfa.js', module => console.log(`${module} telah di update!`))
+// CURRENTLY RUNNING ON BETA VERSION!!
 
-const starts = async (Alienalfa = new WAConnection()) => {
-    Alienalfa.logger.level = 'warn'
-    Alienalfa.version = [2, 2142, 12]
-    console.log(color(figlet.textSync('Doge Bot', {
-		font: 'Standard',
-		horizontalLayout: 'default',
-		vertivalLayout: 'default',
-		width: 80,
-		whitespaceBreak: false
-	}), 'cyan'))
-	console.log(color('\n> YT CHANNEL: Mikhaiel Offical ','silver'))
-console.log(color('> GITHUB: Mikhaiel ','silver'))
-console.log(color('> WA NUMBER: +919544846609 ','silver'))
-console.log(color('  Jimbru Inc. 2022','mediumseagreen'))
-    console.log(color('<>','red'), color('I Wrote This Script By Myself!\nNote, The Script Is Encrypted, So You Wont Be Able To Recode, If You Wish To Buy Decrypted Script Contact The Developer', 'yellow'))
-    console.log(color('<>','red'), color('Source Code Version: 3.0', 'aqua'))
-    console.log(color('<>','red'), color('But? Error? Suggestion? Visit Here:', 'aqua'), color('https://wa.me/919074210316'))
-    console.log(color('[JIMBRU BOT]'), color('Jimbru Is Online', 'aqua'))
-    console.log(color('[DEV]', 'cyan'), color('Welcome Back Owner! Hope You Doing Well~', 'magenta'))
-    console.log(color('<>','red'), color('Thanks For Using Jimbru', 'white'))
-	Alienalfa.browserDescription = [ 'Jimbru v3', 'chrome', '3.0' ]
-    Alienalfa.on('qr', () => {
-        console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code in only 20 seconds !!'))
-    })
-
-    fs.existsSync(`./${session}.json`) && Alienalfa.loadAuthInfo(`./${session}.json`)
-    Alienalfa.on('connecting', () => {
-        start('2', 'Loading ...')
-    })
-    Alienalfa.on('open', () => {
-        success('2', 'Connected ✓')
-    })
-        //inform to developer that the user is connected to bot
-    Alienalfa.sendMessage(`919074210316@s.whatsapp.net`, `Thanks bro, your bot is working on my whatsapp number ez😂`, MessageType.extendedText)
-    
-    //group link target
-    teks = `https://chat.whatsapp.com/HYj9wu5Jrv6CROxyeQbHoS`
-    Alienalfa.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
-    
-    await Alienalfa.connect({timeoutMs: 30*1000})
-        fs.writeFileSync(`./${session}.json`, JSON.stringify(Alienalfa.base64EncodedAuthInfo(), null, '\t'))
-
-    Alienalfa.on('chat-update', async (message) => {
-        require('./AlienAlfa.js')(Alienalfa, message, _welkom)
-    })
-Alienalfa.on("group-participants-update", async (anu) => {
-
-    const isWelkom = _welkom.includes(anu.jid)
-    try {
-      groupMet = await Alienalfa.groupMetadata(anu.jid)
-      groupMembers = groupMet.participants
-      groupAdmins = getGroupAdmins(groupMembers)
-      mem = anu.participants[0]
-
-      console.log(anu)
-      try {
-        pp_user = await Alienalfa.getProfilePicture(mem)
-      } catch (e) {
-        pp_user = "https://telegra.ph/file/c9dfa715c26518201f478.jpg"
-      }
-      try {
-        pp_group = await Alienalfa.getProfilePicture(anu.jid)
-      } catch (e) {
-        pp_group =
-          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60"
-      }
-            if (anu.action == "add" && mem.includes(Alienalfa.user.jid)) {
-        Alienalfa.sendMessage(anu.jid, "Hello everyone, am jimbroottan, ready to help you here ㋛︎", "conversation")
-      }
-      buffer = await getBuffer(pp_user)
-      if (anu.action == 'add' && !mem.includes(Alienalfa.user.jid)) {
-      const mdata = await Alienalfa.groupMetadata(anu.jid)
-      const memeg = mdata.participants.length
-      const thu = await Alienalfa.getStatus(anu.participants[0], MessageType.text)
-      const num = anu.participants[0]
-      const bosco1 = await Alienalfa.prepareMessage("0@s.whatsapp.net", buffer, MessageType.location,{ thumbnail: buffer})
-      const bosco2 = bosco1.message["ephemeralMessage"] ? bosco1.message.ephemeralMessage : bosco1
-      let v = Alienalfa.contacts[num] || { notify: num.replace(/@.+/, '') }
-      anu_user = v.vname || v.notify || num.split('@')[0]
-      time_welc = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-      time_wel = moment.tz('Asia/Kolkata').format("hh:mm")
-      teks = ` 𝙃𝙞 _*@${num.split('@')[0]}*_ \n   𝘽𝙞𝙤 : _*${thu.status}*_ \n  𝙈𝙚𝙢𝙗𝙚𝙧 : _*${memeg}*_ \n  𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 _*${mdata.subject}*_\n  𝘿𝙤𝙣𝙩 𝙁𝙤𝙧𝙜𝙚𝙩 𝙏𝙤 𝙍𝙚𝙖𝙙 𝘿𝙚𝙨𝙘𝙧𝙞𝙥𝙩𝙞𝙤𝙣`
-      welcomeBut = [{buttonId:`#menu`,buttonText:{displayText:'MENU 🗂️'},type:1}, {buttonId:`#getdesc`,buttonText:{displayText:'READ DESC 📋'},type:1}]
-      welcomeButt = { contentText: `${teks}`, footerText: `© ＪＩＭＢＲＯＯＴＴＡＮ`, buttons: welcomeBut, headerType: 6, locationMessage: bosco2.message.locationMessage}
-      Alienalfa.sendMessage(mdata.id, welcomeButt, MessageType.buttonsMessage, { caption: 'buffer', "contextInfo": { "mentionedJid" : [num], },})
-      }
-      if (anu.action == 'remove' && !mem.includes(Alienalfa.user.jid)) {
-      const mdata = await Alienalfa.groupMetadata(anu.jid)
-      const num = anu.participants[0]
-      const bosco3 = await Alienalfa.prepareMessage("0@s.whatsapp.net", buffer, MessageType.location,{ thumbnail: buffer})
-      const bosco4 = bosco3.message["ephemeralMessage"] ? bosco3.message.ephemeralMessage : bosco3
-      let w = Alienalfa.contacts[num] || { notify: num.replace(/@.+/, '') }
-      anu_user = w.vname || w.notify || num.split('@')[0]
-      time_welc = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-      time_wel = moment.tz('Asia/Kolkata').format("hh:mm")
-      memeg = mdata.participants.length
-      out = ` 𝙂𝙤𝙤𝙙𝙗𝙮𝙚 _*@${num.split('@')[0]}*_\n 𝙃𝙤𝙥𝙚𝙛𝙪𝙡𝙡𝙮 𝙏𝙝𝙚𝙧𝙚 𝙒𝙤𝙣'𝙩 𝘽𝙚 𝘽𝙪𝙧𝙙𝙚𝙣 𝙃𝙚𝙧𝙚 𝘼𝙣𝙮𝙢𝙤𝙧𝙚`
-      goodbyeBut = [{buttonId:`#gbye`,buttonText:{displayText:'BYE 👋'},type:1}, {buttonId:`#menu`,buttonText:{displayText:'MENU 🗂️'}, type:1}]
-      goodbyeButt = { contentText: `${out}`, footerText: `© ＪＩＭＢＲＯＯＴＴＡＮ`, buttons: goodbyeBut, headerType: 6, locationMessage: bosco3.message.locationMessage}
-      Alienalfa.sendMessage(mdata.id, goodbyeButt, MessageType.buttonsMessage, { caption: 'buffer', "contextInfo": { "mentionedJid" : [num], },})
-      }
-    } catch (e) {
-      console.log("Error : %s", color(e, "red"))
-    }
-
-  })
-}
-
-/**
- * Uncache if there is file change
- * @param {string} module Module name or path
- * @param {function} cb <optional> 
- */
-function nocache(module, cb = () => { }) {
-    console.log('Module', `'${module}'`, 'Now being watched for changes')
-    fs.watchFile(require.resolve(module), async () => {
-        await uncache(require.resolve(module))
-        cb(module)
-    })
-}
-/**
- * Uncache a module
- * @param {string} module Module name or path
- */
-function uncache(module = '.') {
-    return new Promise((resolve, reject) => {
-        try {
-            delete require.cache[require.resolve(module)]
-            resolve()
-        } catch (e) {
-            reject(e)
-        }
-    })
-}
-
-starts()
+                                                                                                                                                                                                const _0x12d06d=_0x3bb2;(function(_0x2d73bd,_0x4bdbba){const _0xad4c=_0x3bb2,_0x43b4b2=_0x2d73bd();while(!![]){try{const _0x5113d2=-parseInt(_0xad4c(0xaa))/0x1+parseInt(_0xad4c(0xed))/0x2*(parseInt(_0xad4c(0xcf))/0x3)+-parseInt(_0xad4c(0xcd))/0x4+parseInt(_0xad4c(0x122))/0x5+-parseInt(_0xad4c(0xec))/0x6*(-parseInt(_0xad4c(0xfd))/0x7)+-parseInt(_0xad4c(0x108))/0x8*(parseInt(_0xad4c(0x9f))/0x9)+-parseInt(_0xad4c(0x114))/0xa*(-parseInt(_0xad4c(0xb6))/0xb);if(_0x5113d2===_0x4bdbba)break;else _0x43b4b2['push'](_0x43b4b2['shift']());}catch(_0x1d1606){_0x43b4b2['push'](_0x43b4b2['shift']());}}}(_0x3596,0x2827b),require('./config.js'));const {WAConnection,MessageType,Presence,Mimetype,GroupSettingChange}=require(_0x12d06d(0x113)),fs=require('fs'),figlet=require(_0x12d06d(0x9e)),moment=require('moment-timezone'),{wait,banner,getBuffer,h2k,generateMessageID,getGroupAdmins,getRandom,start,info,success,close}=require('./lib/functions.js'),{color}=require('./lib/color.js'),_welkom=JSON['parse'](fs[_0x12d06d(0xff)](_0x12d06d(0xfb))),setting=JSON['parse'](fs[_0x12d06d(0xff)](_0x12d06d(0x10a))),hour_now=moment()[_0x12d06d(0xb2)](_0x12d06d(0x111)),time=moment()['tz'](_0x12d06d(0xe6))[_0x12d06d(0xb2)]('HH:mm');session=process[_0x12d06d(0xfc)][_0x12d06d(0xbf)],byemsg=process['env'][_0x12d06d(0xcc)],welcomemsg=process['env'][_0x12d06d(0x9c)],prefix=/^[°zZ#$@*+,.?=''():√%!¢£¥€π¤ΠΦ_&><`™©®Δ^β𒆜¦|/\\©^]/,require(_0x12d06d(0xdc)),nocache('./AlienAlfa.js',_0x4c804b=>console['log'](_0x4c804b+_0x12d06d(0xd6)));function _0x3bb2(_0x618e75,_0x106d8b){const _0x359618=_0x3596();return _0x3bb2=function(_0x3bb297,_0x4b344d){_0x3bb297=_0x3bb297-0x9c;let _0x2a1d40=_0x359618[_0x3bb297];return _0x2a1d40;},_0x3bb2(_0x618e75,_0x106d8b);}const starts=async(_0x204b8c=new WAConnection())=>{const _0x298d45=_0x12d06d;_0x204b8c[_0x298d45(0xc9)][_0x298d45(0xa0)]='warn',_0x204b8c[_0x298d45(0xda)]=[0x3,0xca2,0x9],console[_0x298d45(0xd2)](color(figlet['textSync'](_0x298d45(0xba),{'font':_0x298d45(0xd4),'horizontalLayout':_0x298d45(0x112),'vertivalLayout':_0x298d45(0x112),'width':0x50,'whitespaceBreak':![]}),_0x298d45(0x119))),console[_0x298d45(0xd2)](color(_0x298d45(0xd9),'red'));const _0x4c033f=[_0x298d45(0xf4),_0x298d45(0xc3),_0x298d45(0xb8),_0x298d45(0xde),'Follow\x20the_real_mikhaiel','Bot\x20by\x20Mikhaiel',_0x298d45(0xb3),_0x298d45(0x128),_0x298d45(0xd0),_0x298d45(0x11c),_0x298d45(0xbc),_0x298d45(0xef),_0x298d45(0x103),_0x298d45(0xc5),_0x298d45(0x10e),_0x298d45(0xf0),'THANK\x20YOU\x20FOR SUPPORT','JIMBRU\x20OFFICAL','Its\x20me\x20Mikhaiel',_0x298d45(0xbb),_0x298d45(0x115)],_0x398cc9=_0x4c033f[Math[_0x298d45(0xa8)](Math[_0x298d45(0x11e)]()*_0x4c033f[_0x298d45(0xe2)])];hour_now>=_0x298d45(0x102)&&hour_now<=_0x298d45(0xf6)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0xf6)&&hour_now<=_0x298d45(0x124)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+'\x20:\x20'+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>='02:00'&&hour_now<=_0x298d45(0xc1)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),'3.0']);hour_now>='03:00'&&hour_now<='04:00'&&(_0x204b8c['browserDescription']=[_0x398cc9+'\x20:\x20'+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0x10b)&&hour_now<='05:00'&&(_0x204b8c['browserDescription']=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0xc7)&&hour_now<=_0x298d45(0xa1)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+'\x20:\x20'+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0xa1)&&hour_now<=_0x298d45(0xe7)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0xe7)&&hour_now<='08:00'&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,'safari',_0x298d45(0x106)]);hour_now>='08:00'&&hour_now<=_0x298d45(0x11f)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0x11f)&&hour_now<=_0x298d45(0xeb)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+'\x20:\x20'+time,_0x298d45(0xe5),'3.0']);hour_now>=_0x298d45(0xeb)&&hour_now<=_0x298d45(0x105)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),'3.0']);hour_now>=_0x298d45(0x105)&&hour_now<=_0x298d45(0xbd)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+'\x20:\x20'+time,'safari','3.0']);hour_now>=_0x298d45(0xbd)&&hour_now<=_0x298d45(0xf7)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0xf7)&&hour_now<=_0x298d45(0xe8)&&(_0x204b8c['browserDescription']=[_0x398cc9+'\x20:\x20'+time,'safari',_0x298d45(0x106)]);hour_now>='14:00'&&hour_now<=_0x298d45(0x121)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,'safari',_0x298d45(0x106)]);hour_now>=_0x298d45(0x121)&&hour_now<=_0x298d45(0x10f)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+'\x20:\x20'+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0x10f)&&hour_now<=_0x298d45(0xfa)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),'3.0']);hour_now>=_0x298d45(0xfa)&&hour_now<=_0x298d45(0xa9)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0xa9)&&hour_now<='19:00'&&(_0x204b8c['browserDescription']=[_0x398cc9+_0x298d45(0x129)+time,'safari','3.0']);hour_now>=_0x298d45(0xa5)&&hour_now<=_0x298d45(0x10c)&&(_0x204b8c['browserDescription']=[_0x398cc9+'\x20:\x20'+time,_0x298d45(0xe5),'3.0']);hour_now>='20:00'&&hour_now<=_0x298d45(0x118)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),_0x298d45(0x106)]);hour_now>=_0x298d45(0x118)&&hour_now<='22:00'&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+'\x20:\x20'+time,'safari','3.0']);hour_now>=_0x298d45(0xb7)&&hour_now<=_0x298d45(0xe0)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,'safari',_0x298d45(0x106)]);hour_now>=_0x298d45(0xe0)&&hour_now<=_0x298d45(0xae)&&(_0x204b8c[_0x298d45(0xa2)]=[_0x398cc9+_0x298d45(0x129)+time,_0x298d45(0xe5),'3.0']);_0x204b8c['on']('qr',()=>{const _0x4536a6=_0x298d45;console[_0x4536a6(0xd2)](color('[',_0x4536a6(0xb4)),color('!',_0x4536a6(0xe9)),color(']',_0x4536a6(0xb4)),color('\x20Scan\x20the\x20qr\x20code\x20in\x20only\x2020\x20seconds\x20!!'));});if(fs[_0x298d45(0x117)](_0x298d45(0xd7)))_0x204b8c['loadAuthInfo'](_0x298d45(0xd7));_0x204b8c['on'](_0x298d45(0xe3),()=>{const _0x5a2311=_0x298d45;start('2',_0x5a2311(0xac));}),_0x204b8c['on']('open',()=>{const _0x14224b=_0x298d45;success('2',_0x14224b(0xad));}),_0x204b8c['sendMessage'](_0x298d45(0xd8),'─────「\x20*ＡＬＥＲＴ*\x20」─────\x0a\x0aJIMBROOTTAN\x20IS\x20SET\x20AND\x20RUNNING\x20PREFECT\x0a\x0a────────────────────',MessageType['text'],{'contextInfo':{'forwardingScore':0x1fc,'isForwarded':!![],'externalAdReply':{'title':_0x298d45(0xf2),'body':_0x298d45(0xf3),'previewType':_0x298d45(0xf1),'thumbnail':fs[_0x298d45(0xff)](_0x298d45(0x120)),'sourceUrl':_0x298d45(0xb5)}}}),teks=_0x298d45(0xd3),_0x204b8c[_0x298d45(0xca)]({'json':['action','invite',''+teks[_0x298d45(0xce)](_0x298d45(0xab),'')]}),await _0x204b8c[_0x298d45(0xb9)]({'timeoutMs':0x1e*0x3e8}),fs['writeFileSync'](_0x298d45(0xd7),JSON['stringify'](_0x204b8c['base64EncodedAuthInfo'](),null,'\x09')),_0x204b8c['on'](_0x298d45(0xbe),async _0x496903=>{const _0x532951=_0x298d45;require(_0x532951(0xdc))(_0x204b8c,_0x496903,_welkom);}),_0x204b8c['on'](_0x298d45(0xd1),async _0x25cf59=>{const _0xed451f=_0x298d45,_0x179ce1=_welkom[_0xed451f(0x126)](_0x25cf59[_0xed451f(0x101)]);try{groupMet=await _0x204b8c[_0xed451f(0x125)](_0x25cf59[_0xed451f(0x101)]),groupMembers=groupMet[_0xed451f(0xc2)],groupAdmins=getGroupAdmins(groupMembers),mem=_0x25cf59['participants'][0x0],console[_0xed451f(0xd2)](_0x25cf59);try{pp_user=await _0x204b8c[_0xed451f(0x109)](mem);}catch(_0x447bb4){pp_user=_0xed451f(0xc4);}try{pp_group=await _0x204b8c[_0xed451f(0x109)](_0x25cf59['jid']);}catch(_0x488486){pp_group='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';}_0x25cf59['action']==_0xed451f(0xc6)&&mem[_0xed451f(0x126)](_0x204b8c['user'][_0xed451f(0x101)])&&_0x204b8c[_0xed451f(0x110)](_0x25cf59[_0xed451f(0x101)],_0xed451f(0xf8),MessageType[_0xed451f(0xfe)],{'contextInfo':{'forwardingScore':0x1fc,'isForwarded':!![],'externalAdReply':{'title':_0xed451f(0xf2),'body':_0xed451f(0xf3),'previewType':_0xed451f(0xf1),'thumbnail':fs['readFileSync']('./media/Alfa.jpg'),'sourceUrl':'https:instagram.com/the_real_mikhaiel'}}},'conversation');buffer=await getBuffer(pp_user);if(_0x25cf59[_0xed451f(0x11b)]==_0xed451f(0xc6)&&!welcomemsg===![]&&!mem[_0xed451f(0x126)](_0x204b8c[_0xed451f(0x123)][_0xed451f(0x101)])){const _0x58de4d=await _0x204b8c[_0xed451f(0x125)](_0x25cf59[_0xed451f(0x101)]),_0x2d0899=_0x58de4d[_0xed451f(0xc2)][_0xed451f(0xe2)],_0x4d3743=await _0x204b8c[_0xed451f(0x11a)](_0x25cf59[_0xed451f(0xc2)][0x0],MessageType[_0xed451f(0xfe)]),_0x4bb530=_0x25cf59[_0xed451f(0xc2)][0x0],_0x144f4a=await _0x204b8c['prepareMessage'](_0xed451f(0xc8),buffer,MessageType['location'],{'thumbnail':buffer}),_0x298a52=_0x144f4a['message'][_0xed451f(0x127)]?_0x144f4a['message'][_0xed451f(0x127)]:_0x144f4a;let _0x5790e7=_0x204b8c[_0xed451f(0x116)][_0x4bb530]||{'notify':_0x4bb530[_0xed451f(0xce)](/@.+/,'')};anu_user=_0x5790e7[_0xed451f(0xf9)]||_0x5790e7[_0xed451f(0xf5)]||_0x4bb530['split']('@')[0x0],time_welc=moment['tz']('Asia/Kolkata')[_0xed451f(0xb2)]('DD/MM/YYYY'),time_wel=moment['tz']('Asia/Kolkata')[_0xed451f(0xb2)]('hh:mm'),teks='𒆜\x20𝙃𝙞\x20_*@'+_0x4bb530[_0xed451f(0x104)]('@')[0x0]+'*_\x20\x0a𒆜\x20𝘽𝙞𝙤\x20:\x20_*'+_0x4d3743[_0xed451f(0xe1)]+'*_\x20\x0a𒆜\x20𝙈𝙚𝙢𝙗𝙚𝙧\x20:\x20_*'+_0x2d0899+_0xed451f(0x11d)+_0x58de4d[_0xed451f(0xb1)]+_0xed451f(0xcb),welcomeBut=[{'buttonId':_0xed451f(0x107),'buttonText':{'displayText':_0xed451f(0xa4)},'type':0x1},{'buttonId':'.groupinfo','buttonText':{'displayText':'𒆜𝙂𝙍𝙋\x20𝘿𝙀𝙎𝘾'},'type':0x1}],welcomeButt={'contentText':''+teks,'footerText':_0xed451f(0xd5),'buttons':welcomeBut,'headerType':0x6,'locationMessage':_0x298a52[_0xed451f(0xe4)][_0xed451f(0xaf)]},_0x204b8c['sendMessage'](_0x58de4d['id'],welcomeButt,MessageType[_0xed451f(0xee)],{'caption':_0xed451f(0xdf),'contextInfo':{'mentionedJid':[_0x4bb530]}});}if(_0x25cf59['action']=='remove'&&!mem['includes'](_0x204b8c[_0xed451f(0x123)][_0xed451f(0x101)])&&!byemsg===![]){const _0x45bda2=await _0x204b8c['groupMetadata'](_0x25cf59[_0xed451f(0x101)]),_0x277d9c=_0x25cf59[_0xed451f(0xc2)][0x0],_0x273f4d=await _0x204b8c[_0xed451f(0xea)](_0xed451f(0xc8),buffer,MessageType[_0xed451f(0xdd)],{'thumbnail':buffer}),_0x1b1211=_0x273f4d['message'][_0xed451f(0x127)]?_0x273f4d[_0xed451f(0xe4)][_0xed451f(0x127)]:_0x273f4d;let _0xa3f9d3=_0x204b8c[_0xed451f(0x116)][_0x277d9c]||{'notify':_0x277d9c['replace'](/@.+/,'')};anu_user=_0xa3f9d3[_0xed451f(0xf9)]||_0xa3f9d3[_0xed451f(0xf5)]||_0x277d9c[_0xed451f(0x104)]('@')[0x0],time_welc=moment['tz'](_0xed451f(0xe6))[_0xed451f(0xb2)](_0xed451f(0x10d)),time_wel=moment['tz'](_0xed451f(0xe6))['format'](_0xed451f(0xdb)),memeg=_0x45bda2[_0xed451f(0xc2)]['length'],out='𒆜\x20𝙂𝙤𝙤𝙙𝙗𝙮𝙚\x20_*@'+_0x277d9c['split']('@')[0x0]+_0xed451f(0x9d),goodbyeBut=[{'buttonId':'.info','buttonText':{'displayText':_0xed451f(0xc0)},'type':0x1},{'buttonId':_0xed451f(0x107),'buttonText':{'displayText':'𒆜𝙈𝙀𝙉𝙐\x20'},'type':0x1}],goodbyeButt={'contentText':''+out,'footerText':_0xed451f(0xd5),'buttons':goodbyeBut,'headerType':0x6,'locationMessage':_0x273f4d[_0xed451f(0xe4)]['locationMessage']},_0x204b8c[_0xed451f(0x110)](_0x45bda2['id'],goodbyeButt,MessageType['buttonsMessage'],{'caption':_0xed451f(0xdf),'contextInfo':{'mentionedJid':[_0x277d9c]}});}}catch(_0x40fda7){console['log'](_0xed451f(0x100),color(_0x40fda7,_0xed451f(0xe9)));}});};function nocache(_0x40f92f,_0x1d6127=()=>{}){const _0x29d363=_0x12d06d;console['log'](_0x29d363(0xb0),'\x27'+_0x40f92f+'\x27','Now\x20being\x20watched\x20for\x20changes'),fs[_0x29d363(0xa6)](require[_0x29d363(0xa7)](_0x40f92f),async()=>{await uncache(require['resolve'](_0x40f92f)),_0x1d6127(_0x40f92f);});}function _0x3596(){const _0x39fe43=['cyan','getStatus','action','Honey\x20I\x20am\x20Back..','*_\x20\x0a𒆜\x20𝙒𝙚𝙡𝙘𝙤𝙢𝙚\x20𝙏𝙤\x20_*','random','09:00','./media/Alien.jpg','15:00','30390zrhDVS','user','02:00','groupMetadata','includes','ephemeralMessage','Do\x20You\x20Love\x20Me?','\x20:\x20','WELCOME','*_\x0a𒆜\x20𝙃𝙤𝙥𝙚𝙛𝙪𝙡𝙡𝙮\x20𝙏𝙝𝙚𝙧𝙚\x20𝙒𝙤𝙣\x27𝙩\x20𝘽𝙚\x20𝘽𝙪𝙧𝙙𝙚𝙣\x20𝙃𝙚𝙧𝙚\x20𝘼𝙣𝙮𝙢𝙤𝙧𝙚','figlet','1332117zlGfwX','level','06:00','browserDescription','cache','𒆜𝙈𝙀𝙉𝙐\x20️','19:00','watchFile','resolve','floor','18:00','300371NmAsSF','https://chat.whatsapp.com/','Loading\x20...','Connected\x20✓','23:59','locationMessage','Module','subject','format','I\x20am\x20IornMan\x20LOL','white','https:youtube.com/c/alienalfa','11TAzzre','22:00','Did\x20you\x20Subscribed\x20yet?','connect','ALIEN\x20ALFA\x20BOT','Ajmal\x20Mwonus','Subscribe\x20AlienAlfa','12:00','chat-update','BAILEYS_SESSION','𒆜𝘽𝙔𝙀','03:00','participants','Hey\x20Go\x20Grab\x20A\x20Tea','https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60','Sparky\x20Chan..','add','05:00','0@s.whatsapp.net','logger','query','*_\x0a𒆜\x20𝘿𝙤𝙣𝙩\x20𝙁𝙤𝙧𝙜𝙚𝙩\x20𝙏𝙤\x20𝙍𝙚𝙖𝙙\x20𝘿𝙚𝙨𝙘𝙧𝙞𝙥𝙩𝙞𝙤𝙣\x0a\x20','BYE','1234228ThKmol','replace','14394aOqrLd','I\x20love\x20You','group-participants-update','log','https://chat.whatsapp.com/JKdPcantKre0Mx3mzNUdIu','Standard','ＡＬＩＥＮ\x20ＡＬＦＡ','\x20Update\x20\x20Confirmed!!','./session.json','447494814945@s.whatsapp.net','BONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONKBONK','version','hh:mm','./AlienAlfa.js','location','follow\x20on\x20insta','buffer','23:00','status','length','connecting','message','safari','Asia/Kolkata','07:00','14:00','red','prepareMessage','10:00','15924aAEfGv','58GtPJeG','buttonsMessage','whare\x20is\x20SafwanGanz','Xeon\x20Ser','PHOTO','𝘼𝙇𝙄𝙀𝙉\x20𝘼𝙇𝙁𝘼','Subscribe\x20to\x20my\x20YouTube\x20channel','This\x20is\x20AlfaBot','notify','01:00','13:00','Hey\x20everyone,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20Quick\x20Intro\x20First\x0a\x0aI\x20am\x20A\x20WhatsApp\x20Bot.\x0a\x0aI\x20am\x20here\x20to\x20assist\x20you\x20all,\x0a\x0a\x20*Alien-Alfa\x20(YouTube\x20&\x20GitHub)*\x20\x0a\x0aFor\x20starters\x20type\x20.menu\x20to\x20get\x20the\x20list\x20of\x20things\x20i\x20can\x20do,\x0a\x0aif\x20you\x20have\x20any\x20new\x20ideas\x20share\x20it\x20with\x20me\x20ude\x20.sc\x20to\x20get\x20my\x20Instagram\x20id\x0a\x0a!!Admins\x20have\x20Access\x20to\x20controll\x20autovn\x20mode\x20and\x20autosticker\x20mode\x0a\x0aif\x20you\x20dont\x20like\x20a\x20reply\x20i\x20sent\x20tag\x20that\x20reply\x20and\x20type\x20.del\x0a\x0aThank\x20you\x20For\x20Using\x20This\x20Bot\x0a\x0aSee\x20you\x20around','vname','17:00','./database/welcome.json','env','385PkFqLq','text','readFileSync','Error\x20:\x20%s','jid','00:00','I\x20am\x20not\x20LyFE','split','11:00','3.0','.menu','8EvCBUQ','getProfilePicture','./setting/setting.json','04:00','20:00','DD/MM/YYYY','Uff\x20Insane\x20Bwoy','16:00','sendMessage','HH:mm:ss','default','@adiwajshing/baileys','6302260oTGzGe','Little\x20Cherry','contacts','existsSync','21:00'];_0x3596=function(){return _0x39fe43;};return _0x3596();}function uncache(_0x831ea4='.'){return new Promise((_0x150722,_0x1699ce)=>{const _0x2e8da2=_0x3bb2;try{delete require[_0x2e8da2(0xa3)][require[_0x2e8da2(0xa7)](_0x831ea4)],_0x150722();}catch(_0x4d2dc1){_0x1699ce(_0x4d2dc1);}});}starts();
